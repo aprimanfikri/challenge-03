@@ -10,6 +10,7 @@ async function getAllCars(req, res) {
     const data = await fs.readFile(carsData);
     const cars = JSON.parse(data);
     res.status(200).json({
+      status: "success",
       message: "Berhasil menampilkan semua data mobil",
       data: cars,
     });
@@ -26,10 +27,12 @@ async function getCarById(req, res) {
     const car = cars.find((car) => car.id === carId);
     if (!car) {
       res.status(404).json({
+        status: "failed",
         message: `Tidak dapat menemukan mobil dengan id ${carId}`,
       });
     } else {
       res.status(200).json({
+        status: "success",
         message: `Berhasil menampilkan data mobil dengan id ${carId}`,
         data: car,
       });
@@ -48,6 +51,7 @@ async function storeCar(req, res) {
     const existingCar = cars.find((c) => c.id === newCarId);
     if (existingCar) {
       return res.status(500).json({
+        status: "failed",
         message: "Terjadi kesalahan dalam menghasilkan id mobil",
       });
     }
@@ -59,6 +63,7 @@ async function storeCar(req, res) {
     cars.push(newCar);
     await fs.writeFile(carsData, JSON.stringify(cars, null, 2));
     res.status(201).json({
+      status: "success",
       message: `Berhasil menambah data mobil dengan id ${newCarId}`,
       data: newCar,
     });
@@ -76,6 +81,7 @@ async function updatecarById(req, res) {
     const index = cars.findIndex((c) => c.id === carId);
     if (index === -1) {
       res.status(404).json({
+        status: "failed",
         message: `Tidak dapat menemukan mobil dengan id ${carId}`,
       });
     } else {
@@ -83,6 +89,7 @@ async function updatecarById(req, res) {
       cars[index] = updatedCar;
       await fs.writeFile(carsData, JSON.stringify(cars, null, 2));
       res.json({
+        status: "success",
         message: `Mobil dengan id ${carId} berhasil di update`,
         data: updatedCar,
       });
@@ -100,12 +107,14 @@ async function deleteCarById(req, res) {
     const index = cars.findIndex((c) => c.id === carId);
     if (index === -1) {
       res.status(404).json({
+        status: "failed",
         message: `Tidak dapat menemukan mobil dengan id ${carId}`,
       });
     } else {
       const deletedCar = cars.splice(index, 1)[0];
       await fs.writeFile(carsData, JSON.stringify(cars, null, 2));
       res.status(200).json({
+        status: "success",
         message: `Mobil dengan id ${carId} berhasil di hapus`,
         data: deletedCar,
       });

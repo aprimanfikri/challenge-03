@@ -801,22 +801,5 @@
       "Remote fuel lid release",
       "Traveler/mini trip computer"
     ]
-  },
-  {
-    "id": "f14cbc4a-85f7-4ba5-9ed6-9fa7b882fc59",
-    "plate": "IDN-5678",
-    "manufacture": "",
-    "model": "",
-    "image": "",
-    "rentPerDay": 0,
-    "capacity": 0,
-    "description": "",
-    "availableAt": "",
-    "transmission": "",
-    "available": false,
-    "type": "",
-    "year": 0,
-    "options": [],
-    "specs": []
   }
 ]
