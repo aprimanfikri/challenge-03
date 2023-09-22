@@ -801,39 +801,5 @@
       "Remote fuel lid release",
       "Traveler/mini trip computer"
     ]
-  },
-  {
-    "id": "1127a962-694a-4877-9d59-0895b6bb8bda",
-    "plate": "XXX-3491",
-    "manufacture": "Mitsubishi",
-    "model": "L300",
-    "image": "",
-    "rentPerDay": 0,
-    "capacity": 0,
-    "description": "",
-    "availableAt": "",
-    "transmission": "",
-    "available": false,
-    "type": "",
-    "year": 0,
-    "options": [],
-    "specs": []
-  },
-  {
-    "id": "26a3ab22-971a-4b02-9ec9-af03da3e51c6",
-    "plate": "XXX-3491",
-    "manufacture": "Mitsubishi",
-    "model": "L300",
-    "image": "",
-    "rentPerDay": 0,
-    "capacity": 0,
-    "description": "",
-    "availableAt": "",
-    "transmission": "",
-    "available": false,
-    "type": "",
-    "year": 0,
-    "options": [],
-    "specs": []
   }
 ]
